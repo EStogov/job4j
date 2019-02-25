@@ -36,4 +36,26 @@ public class ConverterTest {
         int result = converter.rubleToEuro(70);
         assertThat(result, is(1));
     }
+
+    /**
+     * Test convert dollar into rubles.
+     */
+
+    @Test
+    public void whenDollarToRublesThen60() {
+        Converter converter = new Converter();
+        int result = converter.dollarToRuble(1);
+        assertThat(result, is(60));
+    }
+
+    /**
+     * Test convert euro into rubles.
+     */
+
+    @Test
+    public void whenEuroToRublesThen70() {
+        Converter converter = new Converter();
+        int result = converter.euroToRuble(1);
+        assertThat(result, is(70));
+    }
 }
