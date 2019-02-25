@@ -33,4 +33,37 @@ public class MaxTest {
         int result = maxim.max(3, 2);
         assertThat(result, is(3));
     }
+
+    /**
+     * Test первое больше второго и третьего.
+     */
+
+    @Test
+    public void whenFirstIsTheBiggest() {
+        Max maxim = new Max();
+        int result = maxim.max(3, 2, 1);
+        assertThat(result, is(3));
+    }
+
+    /**
+     * Test второе больше первого и третьего.
+     */
+
+    @Test
+    public void whenSecondIsTheBiggest() {
+        Max maxim = new Max();
+        int result = maxim.max(2, 3, 1);
+        assertThat(result, is(3));
+    }
+
+    /**
+     * Test третье больше первого и второго.
+     */
+
+    @Test
+    public void whenThirdIsTheBiggest() {
+        Max maxim = new Max();
+        int result = maxim.max(1, 2, 3);
+        assertThat(result, is(3));
+    }
 }
