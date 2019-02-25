@@ -12,7 +12,7 @@ public class Calculator {
     /**
      * Contains result.
      */
-    double result;
+    private double result;
 
     /**
      * Method addition.
@@ -20,7 +20,7 @@ public class Calculator {
      * @param second - second number.
      */
 
-    void add(double first, double second) {
+    public void add(double first, double second) {
         this.result = first + second;
     }
 
@@ -30,7 +30,7 @@ public class Calculator {
      * @param second - subtrahend.
      */
 
-    void subtract(double first, double second) {
+    public void subtract(double first, double second) {
         this.result = first - second;
     }
 
@@ -40,7 +40,7 @@ public class Calculator {
      * @param second - divider.
      */
 
-    void div(double first, double second) {
+    public void div(double first, double second) {
         this.result = first / second;
     }
 
@@ -50,7 +50,7 @@ public class Calculator {
      * @param second - second multiplier.
      */
 
-    void multiply(double first, double second) {
+    public void multiply(double first, double second) {
         this.result = first * second;
     }
 
@@ -59,7 +59,7 @@ public class Calculator {
      * @return result.
      */
 
-    double getResult() {
+    public double getResult() {
         return this.result;
     }
 }
