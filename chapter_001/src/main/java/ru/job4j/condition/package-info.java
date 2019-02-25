@@ -1,5 +1,5 @@
 /**
- * Package for distance task.
+ * Package for condition task.
  *
  * @author Egor Stogov (egst@rambler.ru)
  * @version $Id$
