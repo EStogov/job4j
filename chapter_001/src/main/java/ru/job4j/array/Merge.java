@@ -18,18 +18,19 @@ public class Merge {
     int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
         int index = 0;
-        int count = 0;
+        int r = 0;
         for (int l = 0; l <= left.length - 1; l++) {
-            for (int r = count; r <= right.length - 1; r++) {
-                if (left[l] > right[r]) {
-                    rsl[index] = right[r];
-                    index++;
-                } else {
-                    rsl[index] = left[l];
-                    index++;
-                    count = r;
-                    break;
+            if (left[l] > right[r]) {
+                rsl[index] = right[r];
+                index++;
+                if (right.length - 1 == r) {
+                    continue;
                 }
+                r++;
+                l--;
+            } else {
+                rsl[index] = left[l];
+                index++;
             }
         }
         if (left[left.length - 1] > right[right.length - 1]) {
