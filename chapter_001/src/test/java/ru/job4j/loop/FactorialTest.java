@@ -18,8 +18,8 @@ public class FactorialTest {
 
     @Test
     public void when5Then120() {
-        Factorial factorial = new Factorial();
-        assertThat(factorial.calc(5), is(120));
+        Factorial number = new Factorial();
+        assertThat(number.calc(5), is(120));
     }
 
     /**
@@ -28,7 +28,7 @@ public class FactorialTest {
 
     @Test
     public void when0Then1() {
-        Factorial factorial = new Factorial();
-        assertThat(factorial.calc(0), is(1));
+        Factorial number = new Factorial();
+        assertThat(number.calc(0), is(1));
     }
 }

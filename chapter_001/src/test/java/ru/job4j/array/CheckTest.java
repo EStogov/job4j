@@ -18,10 +18,10 @@ public class CheckTest {
 
     @Test
     public void whenArrayIsMonoByFalseThenTrue() {
-        Check check = new Check();
+        Check mono = new Check();
         boolean rsl = true;
         boolean[] array = new boolean[] {false, false, false, false};
-        assertThat(check.mono(array), is(rsl));
+        assertThat(mono.mono(array), is(rsl));
     }
 
     /**
@@ -30,9 +30,9 @@ public class CheckTest {
 
     @Test
     public void whenArrayIsNotMonoThenFalse() {
-        Check check = new Check();
+        Check both = new Check();
         boolean rsl = false;
         boolean[] array = new boolean[] {false, false, true, false};
-        assertThat(check.mono(array), is(rsl));
+        assertThat(both.mono(array), is(rsl));
     }
 }

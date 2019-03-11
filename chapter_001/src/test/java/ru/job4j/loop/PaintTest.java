@@ -19,8 +19,8 @@ public class PaintTest {
 
     @Test
     public void whenPyramid4Right() {
-        Paint paint = new Paint();
-        String rst = paint.rightTrl(4);
+        Paint triangle = new Paint();
+        String rst = triangle.rightTrl(4);
         System.out.println(rst);
         assertThat(rst,
                 is(
@@ -40,8 +40,8 @@ public class PaintTest {
 
     @Test
     public void whenPyramid4Left() {
-        Paint paint = new Paint();
-        String rst = paint.leftTrl(4);
+        Paint triangle = new Paint();
+        String rst = triangle.leftTrl(4);
         System.out.println(rst);
         assertThat(rst,
                 is(
@@ -61,8 +61,8 @@ public class PaintTest {
 
     @Test
     public void whenPyramid4Height() {
-        Paint paint = new Paint();
-        String rst = paint.pyramid(4);
+        Paint triangle = new Paint();
+        String rst = triangle.pyramid(4);
         System.out.println(rst);
         assertThat(rst,
                 is(

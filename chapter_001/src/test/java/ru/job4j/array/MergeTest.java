@@ -18,10 +18,10 @@ public class MergeTest {
 
     @Test
     public void when137MergeWith2456Then1234567() {
-        Merge merge = new Merge();
+        Merge unity = new Merge();
         int[] first = new int[] {1, 3, 7};
         int[] second = new int[] {2, 4, 5, 6};
         int[] result = new int[] {1, 2, 3, 4, 5, 6, 7};
-        assertThat(merge.merge(first, second), is(result));
+        assertThat(unity.merge(first, second), is(result));
     }
 }

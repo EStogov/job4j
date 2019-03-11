@@ -18,8 +18,8 @@ public class BoardTest {
 
     @Test
     public void when3x3() {
-        Board board = new Board();
-        String rsl = board.paint(3, 3);
+        Board chess = new Board();
+        String rsl = chess.paint(3, 3);
         String ln = System.lineSeparator();
         assertThat(rsl, is(
                 String.format("X X%s X %sX X%s", ln, ln, ln)
@@ -33,8 +33,8 @@ public class BoardTest {
 
     @Test
     public void when4x3() {
-        Board board = new Board();
-        String rsl = board.paint(4, 3);
+        Board chess = new Board();
+        String rsl = chess.paint(4, 3);
         String ln = System.lineSeparator();
         assertThat(rsl, is(
                 String.format("X X %s X X%sX X %s", ln, ln, ln)

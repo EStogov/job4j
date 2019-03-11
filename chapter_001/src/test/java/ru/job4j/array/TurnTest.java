@@ -18,10 +18,10 @@ public class TurnTest {
 
     @Test
     public void whenEvenArray() {
-        Turn turn = new Turn();
+        Turn back = new Turn();
         int[] array = new int[] {1, 2, 3, 4};
         int[] rsl = new int[] {4, 3, 2, 1};
-        assertThat(turn.back(array), is(rsl));
+        assertThat(back.back(array), is(rsl));
     }
 
     /**
@@ -30,9 +30,9 @@ public class TurnTest {
 
     @Test
     public void whenUnevenArray() {
-        Turn turn = new Turn();
+        Turn back = new Turn();
         int[] array = new int[] {1, 2, 3, 4, 5};
         int[] rsl = new int[] {5, 4, 3, 2, 1};
-        assertThat(turn.back(array), is(rsl));
+        assertThat(back.back(array), is(rsl));
     }
 }

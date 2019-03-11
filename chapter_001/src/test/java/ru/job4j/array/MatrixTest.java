@@ -18,8 +18,8 @@ public class MatrixTest {
 
     @Test
     public void when4on4() {
-        Matrix matrix = new Matrix();
-        int[][] table = matrix.multiple(4);
+        Matrix multiple = new Matrix();
+        int[][] table = multiple.multiple(4);
         int[][] expect = {
                 {1, 2, 3, 4},
                 {2, 4, 6, 8},
@@ -35,8 +35,8 @@ public class MatrixTest {
 
     @Test
     public void when5on5() {
-        Matrix matrix = new Matrix();
-        int[][] table = matrix.multiple(5);
+        Matrix multiple = new Matrix();
+        int[][] table = multiple.multiple(5);
         int[][] expect = {
                 {1, 2, 3, 4, 5},
                 {2, 4, 6, 8, 10},

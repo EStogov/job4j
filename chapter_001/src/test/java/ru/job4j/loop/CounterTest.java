@@ -17,7 +17,7 @@ public class CounterTest {
      */
     @Test
     public void whenFrom1To10Then30() {
-        Counter counter = new Counter();
-        assertThat(counter.add(1, 10), is(30));
+        Counter sum = new Counter();
+        assertThat(sum.add(1, 10), is(30));
     }
 }

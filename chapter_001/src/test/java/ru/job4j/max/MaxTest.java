@@ -18,8 +18,8 @@ public class MaxTest {
 
     @Test
     public void whenFirstLessSecond() {
-        Max maxim = new Max();
-        int result = maxim.max(1, 2);
+        Max maximum = new Max();
+        int result = maximum.max(1, 2);
         assertThat(result, is(2));
     }
 
@@ -29,8 +29,8 @@ public class MaxTest {
 
     @Test
     public void whenFirstMoreSecond() {
-        Max maxim = new Max();
-        int result = maxim.max(3, 2);
+        Max maximum = new Max();
+        int result = maximum.max(3, 2);
         assertThat(result, is(3));
     }
 
@@ -40,8 +40,8 @@ public class MaxTest {
 
     @Test
     public void whenFirstIsTheBiggest() {
-        Max maxim = new Max();
-        int result = maxim.max(3, 2, 1);
+        Max maximum = new Max();
+        int result = maximum.max(3, 2, 1);
         assertThat(result, is(3));
     }
 
@@ -51,8 +51,8 @@ public class MaxTest {
 
     @Test
     public void whenSecondIsTheBiggest() {
-        Max maxim = new Max();
-        int result = maxim.max(2, 3, 1);
+        Max maximum = new Max();
+        int result = maximum.max(2, 3, 1);
         assertThat(result, is(3));
     }
 
@@ -62,8 +62,8 @@ public class MaxTest {
 
     @Test
     public void whenThirdIsTheBiggest() {
-        Max maxim = new Max();
-        int result = maxim.max(1, 2, 3);
+        Max maximum = new Max();
+        int result = maximum.max(1, 2, 3);
         assertThat(result, is(3));
     }
 }
