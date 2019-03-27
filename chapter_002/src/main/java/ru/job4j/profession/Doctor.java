@@ -12,7 +12,35 @@ public class Doctor extends Profession {
      * Специализация врача.
      */
 
-    String specialization;
+    private String specialization;
+
+    /**
+     * Конструктор.
+     * @param name имя врача
+     * @param profession профессия
+     * @param specialization - специализация врача
+     */
+
+    public Doctor(String name, String profession, String specialization) {
+        super(name, profession);
+        this.specialization = specialization;
+    }
+
+    /**
+     * Метод сеттер для specialization.
+     */
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    /**
+     * Метод геттер для specialization.
+     */
+
+    public String getSpecialization(String specialization) {
+        return this.specialization;
+    }
 
     /**
      * Метод лечения пациента.

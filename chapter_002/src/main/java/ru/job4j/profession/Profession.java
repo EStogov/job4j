@@ -12,11 +12,54 @@ public class Profession {
      * Имя человека.
      */
 
-    String name;
+    private String name;
 
     /**
      * Профессия.
      */
 
-    String profession;
+    private String profession;
+
+    /**
+     * Конструктор.
+     * @param name имя человека
+     * @param profession профессия
+     */
+
+    public Profession(String name, String profession) {
+        this.name = name;
+        this.profession = profession;
+    }
+
+    /**
+     * Метод сеттер для name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Метод геттер для name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Метод сеттер для profession.
+     */
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    /**
+     * Метод геттер для profession.
+     */
+
+    public String getProfession() {
+        return this.profession;
+    }
 }

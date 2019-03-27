@@ -12,7 +12,32 @@ public class Patient {
      * Имя пациента.
      */
 
-    String name;
+    private String name;
+
+    /**
+     * Конструктор.
+     * @param name - имя пациента
+     */
+
+    public Patient(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Метод сеттер для name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Метод геттер для name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
 
     /**
      * Метод для оплаты лечения.

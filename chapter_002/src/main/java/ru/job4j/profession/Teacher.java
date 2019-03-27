@@ -12,7 +12,35 @@ public class Teacher extends Profession {
      * Наличие терпения.
      */
 
-    boolean patience;
+    private boolean patience;
+
+    /**
+     * Конструтор.
+     * @param name имя учителя
+     * @param profession профессия
+     * @param patience наличие терпения
+     */
+
+    public Teacher(String name, String profession, boolean patience) {
+        super(name, profession);
+        this.patience = patience;
+    }
+
+    /**
+     * Метод сеттер для patience.
+     */
+
+    public void setPatience(boolean patience) {
+        this.patience = patience;
+    }
+
+    /**
+     * Метод геттер для patience.
+     */
+
+    public boolean getPatience() {
+        return this.patience;
+    }
 
     /**
      * Метод обучения учеников.

@@ -12,7 +12,32 @@ public class Student {
      * Имя студента.
      */
 
-    String name;
+    private String name;
+
+    /**
+     * Конструктор.
+     * @param name имя ученика
+     */
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Метод сеттер для name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Метод геттер для name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
 
     /**
      * Метод освоения урока.
