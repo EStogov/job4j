@@ -43,11 +43,13 @@ public class Tracker {
      */
 
     public boolean replace(String id, Item item) {
+        item.setId(id);
         boolean rsl = false;
-        for (int i = 0; i <= this.position - 1; i++) {
+        for (int i = 0; i < this.position; i++) {
             if (this.items[i].getId().equals(id) && this.items[i] != null) {
                 this.items[i] = item;
                 rsl = true;
+                break;
             }
         }
         return rsl;
@@ -61,19 +63,13 @@ public class Tracker {
 
     public boolean delete(String id) {
         boolean find = false;
-        for (int index = 0; index <= this.position - 2; index++) {
-            if (find) {
-                this.items[index] = this.items[index + 1];
-            } else {
-                if (this.items[index].equals(findById(id))) {
-                    find = true;
-                    this.items[index] = this.items[index + 1];
-                }
+        for (int index = 0; index < this.position - 1; index++) {
+            if (this.items[index].getId().equals(id)) {
+                System.arraycopy(this.items, index + 1, this.items, index, this.position - index);
+                this.position--;
+                find = true;
+                break;
             }
-        }
-        if (this.items[this.position - 1].equals(findById(id)) || find) {
-            System.arraycopy(this.items, 0, this.items, 0, this.position - 2);
-            find = true;
         }
         return find;
     }
