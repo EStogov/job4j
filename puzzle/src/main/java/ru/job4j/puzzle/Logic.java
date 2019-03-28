@@ -71,9 +71,9 @@ public class Logic {
         boolean result = false;
         int row = 0;
         int column = 0;
-        for (int i = 0; i <= table.length; i++) {
+        for (int i = 0; i <= table.length - 1; i++) {
             if (table[0][i] == 1) {
-                for (int j = 1; j <= table.length - 1; j++) {
+                for (int j = 1; j <= table.length - 2; j++) {
                     if (table[j][i] != 1) {
                         column++;
                     } else {
@@ -82,7 +82,7 @@ public class Logic {
                 }
             }
             if (table[i][0] == 1) {
-                for (int j = 1; j <= table.length - 1; j++) {
+                for (int j = 1; j <= table.length - 2; j++) {
                     if (table[i][0] != 1) {
                         row++;
                     } else {
