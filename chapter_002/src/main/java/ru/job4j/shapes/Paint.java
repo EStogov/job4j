@@ -25,10 +25,9 @@ public class Paint {
 
     /**
      * Метод вывода на экран фигуры.
-     * @param shape - фигура.
      */
 
-    public void draw(Shape shape) {
-        System.out.println(shape.draw());
+    public void draw() {
+        System.out.println(this.shape.draw());
     }
 }

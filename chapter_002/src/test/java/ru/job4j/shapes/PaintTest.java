@@ -38,7 +38,7 @@ public class PaintTest {
 
     @Test
     public void whenDrawSquare() {
-        new Paint(new Square()).draw(new Square());
+        new Paint(new Square()).draw();
         String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),
@@ -59,7 +59,7 @@ public class PaintTest {
 
     @Test
     public void whenDrawTriangle() {
-        new Paint(new Triangle()).draw(new Triangle());
+        new Paint(new Triangle()).draw();
         String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),

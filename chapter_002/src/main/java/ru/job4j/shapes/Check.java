@@ -8,7 +8,7 @@ package ru.job4j.shapes;
 
 public class Check {
     public static void main(String[] args) {
-        new Paint(new Triangle()).draw(new Triangle());
-        new Paint(new Square()).draw(new Square());
+        new Paint(new Triangle()).draw();
+        new Paint(new Square()).draw();
     }
 }
