@@ -25,6 +25,19 @@ public class StartUITest {
     // буфер для результата.
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
+    // перенос строки.
+    String ln = System.lineSeparator();
+
+    // меню.
+    private final String menu = ln + "Меню." + ln
+                + "0. Добавить заявку." + ln
+                + "1. Показать все заявки." + ln
+                + "2. Редактировать заявку." + ln
+                + "3. Удалить заявку." + ln
+                + "4. Найти по Id." + ln
+                + "5. Найти по названию." + ln
+                + "6. Выход." + ln;
+
     @Before
     public void loadOutput() {
         System.out.println("execute before method");
@@ -114,32 +127,17 @@ public class StartUITest {
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
 
-        String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),
                 Is.is(
                         new StringBuilder()
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .append(ln + "------------ Список заявок --------------" + ln)
                                 .append("Id заявки: " + check.getId() + ln)
                                 .append("Название: " + check.getName() + ln)
                                 .append("Описание: " + check.getDecs() + ln)
                                 .append("Время создания: " + check.getTime() + ln)
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .toString()
                 )
         );
@@ -159,31 +157,16 @@ public class StartUITest {
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
 
-        String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),
                 Is.is(
                         new StringBuilder()
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .append(ln + "Id заявки: " + check.getId() + ln)
                                 .append("Название заявки: " + check.getName() + ln)
                                 .append("Описание: " + check.getDecs() + ln)
                                 .append("Время оформления: " + check.getTime() + ln)
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .toString()
                 )
         );
@@ -201,28 +184,13 @@ public class StartUITest {
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
 
-        String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),
                 Is.is(
                         new StringBuilder()
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .append(ln + "------------ Заявка №" + id + " не найдена --------------" + ln)
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .toString()
                 )
         );
@@ -242,31 +210,16 @@ public class StartUITest {
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
 
-        String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),
                 Is.is(
                         new StringBuilder()
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .append(ln + "Id заявки: " + check.getId() + ln)
                                 .append("Название заявки: " + check.getName() + ln)
                                 .append("Описание: " + check.getDecs() + ln)
                                 .append("Время оформления: " + check.getTime() + ln)
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .toString()
                 )
         );
@@ -284,28 +237,13 @@ public class StartUITest {
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
 
-        String ln = System.lineSeparator();
         assertThat(
                 new String(out.toByteArray()),
                 Is.is(
                         new StringBuilder()
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .append(ln + "------------ Заявка №" + name + " не найдена --------------" + ln)
-                                .append(ln + "Меню." + ln)
-                                .append("0. Добавить заявку." + ln)
-                                .append("1. Показать все заявки." + ln)
-                                .append("2. Редактировать заявку." + ln)
-                                .append("3. Удалить заявку." + ln)
-                                .append("4. Найти по Id." + ln)
-                                .append("5. Найти по названию." + ln)
-                                .append("6. Выход." + ln)
+                                .append(menu)
                                 .toString()
                 )
         );
