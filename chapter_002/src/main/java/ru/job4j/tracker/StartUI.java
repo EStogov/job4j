@@ -115,7 +115,7 @@ public class StartUI {
             System.out.println("Id заявки: " + item.getId() + ln
                     + "Название: " + item.getName() + ln
                     + "Описание: " + item.getDecs() + ln
-                    + "Время создания: " + item.getTime() + ln);
+                    + "Время создания: " + item.getTime());
         }
     }
 
@@ -180,7 +180,7 @@ public class StartUI {
             System.out.println("Id заявки: " + item.getId() + ln
                     + "Название заявки: " + item.getName() + ln
                     + "Описание: " + item.getDecs() + ln
-                    + "Время оформления: " + item.getTime() + ln);
+                    + "Время оформления: " + item.getTime());
         }
     }
 
@@ -197,7 +197,7 @@ public class StartUI {
             System.out.println("Id заявки: " + item.getId() + ln
                     + "Название заявки: " + item.getName() + ln
                     + "Описание: " + item.getDecs() + ln
-                    + "Время оформления: " + item.getTime() + ln);
+                    + "Время оформления: " + item.getTime());
         }
     }
 
