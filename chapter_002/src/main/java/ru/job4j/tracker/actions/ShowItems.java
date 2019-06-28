@@ -44,12 +44,9 @@ public class ShowItems implements UserAction {
         System.out.println();
         System.out.println("------------ Список заявок --------------");
         Item[] list = tracker.findAll();
-        String ln = System.lineSeparator();
         for (Item item : list) {
-            System.out.println("Id заявки: " + item.getId() + ln
-                    + "Название: " + item.getName() + ln
-                    + "Описание: " + item.getDecs() + ln
-                    + "Время создания: " + item.getTime());
+            System.out.println(String.format("Id заявки: %s%nНазвание: %s%nОписание: %s%nВремя создания: %d",
+                    item.getId(), item.getName(), item.getDecs(), item.getTime()));
         }
     }
 

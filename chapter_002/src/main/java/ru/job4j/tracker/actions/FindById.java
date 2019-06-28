@@ -48,10 +48,8 @@ public class FindById implements UserAction {
         if (item == null) {
             System.out.println("------------ Заявка №" + id + " не найдена --------------");
         } else {
-            System.out.println("Id заявки: " + item.getId() + ln
-                    + "Название заявки: " + item.getName() + ln
-                    + "Описание: " + item.getDecs() + ln
-                    + "Время оформления: " + item.getTime());
+            System.out.println(String.format("Id заявки: %s%nНазвание заявки: %s%nОписание: %s%nВремя оформления: %d",
+                    item.getId(), item.getName(), item.getDecs(), item.getTime()));
         }
     }
 
