@@ -47,7 +47,18 @@ public class StubInput implements Input {
      */
 
     public int ask(String question, int[] range) {
-       // throw new UnsupportedOperationException("Unsupported operation");
-        return -1;
+        boolean exist = false;
+        int key = Integer.valueOf(this.answers[this.position++]);
+        for (int value : range) {
+            if (key == value) {
+                exist = true;
+                break;
+            }
+        }
+        if (exist) {
+            return key;
+        } else {
+            throw new MenuOutException("Пожалуйста, выберите пункт из диапазона меню.");
+        }
     }
 }

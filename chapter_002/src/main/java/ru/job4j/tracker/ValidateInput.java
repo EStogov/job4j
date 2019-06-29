@@ -6,8 +6,23 @@ package ru.job4j.tracker;
  * @since 0.1
  */
 
-public class ValidateInput extends ConsoleInput {
+public class ValidateInput implements Input {
 
+    private final Input input;
+
+    /**
+     * Конструктор.
+     * @param input объект класса Input
+     */
+
+    public ValidateInput(final Input input) {
+        this.input = input;
+    }
+
+    @Override
+    public String ask(String question) {
+        return this.input.ask(question);
+    }
     /**
      * Перегруженный метод родительского класса ConsoleInput.
      * @param question вопрос
@@ -20,7 +35,7 @@ public class ValidateInput extends ConsoleInput {
         int value = -1;
         do {
             try {
-                value = super.ask(question, range);
+                value = this.input.ask(question, range);
                 invalid = false;
             } catch (MenuOutException moe) {
                 System.out.println("Пожалуйста, выберите пункт из диапазона меню.");
