@@ -51,7 +51,7 @@ public class DeleteItem implements UserAction {
             if (tracker.delete(id)) {
                 System.out.println("------------ Заявка №" + id + " удалена --------------");
             } else {
-                System.out.println("------------ Заявка № не найдена --------------");
+                System.out.println(String.format("------------ Заявка № %s не найдена --------------", id));
             }
         } else {
             String newAnswer = input.ask(ln + "0. Вернуться в основное меню." + ln + "1. Удалить другую заявку.");

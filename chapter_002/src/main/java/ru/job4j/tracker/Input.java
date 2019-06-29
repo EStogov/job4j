@@ -15,4 +15,12 @@ public interface Input {
      */
 
     String ask(String question);
+
+    /**
+     * Метод, задающий вопрос пользователю и проверяющий соответствие введенного ключа.
+     * @param question вопрос
+     * @return ответ
+     */
+
+    int ask(String question, int[] range);
 }

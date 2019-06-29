@@ -38,4 +38,16 @@ public class StubInput implements Input {
     public String ask(String question) {
         return this.answers[position++];
     }
+
+    /**
+     * Метод, имитирующий ответ пользователя.
+     * @param question вопрос
+     * @param range диапазон ключей
+     * @return ответ
+     */
+
+    public int ask(String question, int[] range) {
+       // throw new UnsupportedOperationException("Unsupported operation");
+        return -1;
+    }
 }
