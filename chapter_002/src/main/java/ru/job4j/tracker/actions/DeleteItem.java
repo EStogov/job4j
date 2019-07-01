@@ -1,36 +1,18 @@
 package ru.job4j.tracker.actions;
 
+import ru.job4j.tracker.BaseAction;
 import ru.job4j.tracker.Input;
 import ru.job4j.tracker.Tracker;
-import ru.job4j.tracker.UserAction;
 
-public class DeleteItem implements UserAction {
-    /**
-     * Ключ операции.
-     */
-    private int key;
-    /**
-     * Пункт меню.
-     */
-    private String menuItem;
+public class DeleteItem extends BaseAction {
 
     /**
      * Конструктор.
      * @param key - Ключ опции
-     * @param menuItem - Пункт меню
+     * @param name - Пункт меню
      */
-    public DeleteItem(int key, String menuItem) {
-        this.key = key;
-        this.menuItem = key + ". " + menuItem;
-    }
-
-    /**
-     * Переопределение метода UserAction.key().
-     * @return ключ операции
-     */
-    @Override
-    public int key() {
-        return key;
+    public DeleteItem(int key, String name) {
+        super(key, name);
     }
 
     /**
@@ -59,14 +41,5 @@ public class DeleteItem implements UserAction {
                 execute(input, tracker);
             }
         }
-    }
-
-    /**
-     * Переопределение метода UserAction.info().
-     * @return - пункт меню
-     */
-    @Override
-    public String info() {
-        return menuItem;
     }
 }
