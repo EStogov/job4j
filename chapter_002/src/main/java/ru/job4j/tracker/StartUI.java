@@ -8,6 +8,8 @@ package ru.job4j.tracker;
 
 public class StartUI {
 
+    private boolean working = true;
+
     /**
      * Диапазон ключей опций.
      */
@@ -44,7 +46,7 @@ public class StartUI {
      */
     public void init() {
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
-        menu.fillActions();
+        menu.fillActions(this);
         this.ranges = new int[menu.getActionsLentgh()];
         for (int i = 0; i <= this.ranges.length - 1; i++) {
             this.ranges[i] = i;
@@ -53,7 +55,11 @@ public class StartUI {
             menu.show();
             this.key = input.ask("Введите пункт меню:", ranges);
             menu.select(this.key);
-        } while (this.key != ranges[ranges.length - 1]);
+        } while (this.working);
+    }
+
+    public void stop() {
+        this.working = false;
     }
 
     public static void main(String[] args) {
