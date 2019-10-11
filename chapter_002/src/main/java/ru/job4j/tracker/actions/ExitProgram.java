@@ -1,37 +1,31 @@
+
 package ru.job4j.tracker.actions;
 
+import ru.job4j.tracker.BaseAction;
 import ru.job4j.tracker.Input;
 import ru.job4j.tracker.Tracker;
-import ru.job4j.tracker.UserAction;
+import ru.job4j.tracker.StartUI;
 
-public class ExitProgram implements UserAction {
+public class ExitProgram extends BaseAction {
+
     /**
-     * Ключ операции.
+     * Поле объекта типа StartUI.
      */
-    private int key;
-    /**
-     * Пункт меню.
-     */
-    private String menuItem;
+
+    private final StartUI ui;
 
     /**
      * Конструктор.
      * @param key - Ключ опции
-     * @param menuItem - Пункт меню
+     * @param name - пункт меню
+     * @param ui - объект типа StartUI
      */
-    public ExitProgram(int key, String menuItem) {
-        this.key = key;
-        this.menuItem = key + ". " + menuItem;
+
+    public ExitProgram(int key, String name, StartUI ui) {
+        super(key, name);
+        this.ui = ui;
     }
 
-    /**
-     * Переопределение метода UserAction.key().
-     * @return ключ операции
-     */
-    @Override
-    public int key() {
-        return this.key;
-    }
     /**
      * Переопределение метода UserAction.execute().
      * @param input - объект типа Input
@@ -40,16 +34,6 @@ public class ExitProgram implements UserAction {
 
     @Override
     public void execute(Input input, Tracker tracker) {
-
+        this.ui.stop();
     }
-
-    /**
-     * Переопределение метода UserAction.info().
-     * @return - пункт меню
-     */
-    @Override
-    public String info() {
-        return menuItem;
-    }
-
 }
