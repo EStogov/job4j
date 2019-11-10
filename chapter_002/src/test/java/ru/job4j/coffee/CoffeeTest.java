@@ -65,11 +65,5 @@ import static org.hamcrest.Matchers.is;
 		Coffee cof = new Coffee();
 		int[] result = new int[] {0};
 		assertThat(cof.changes(40, 50), is(result));
-		assertThat(
-			this.mem.toString(),
-			is(
-				String.format("Введите еще 10%n")
-            )
-        );
 	}
 }
