@@ -10,6 +10,8 @@ import java.util.Arrays;
 
 public class Coffee {
 	
+	private final int[] coins = new int[] {10, 5, 2, 1};
+	
 	/**
      * Метод, реализующий выдачу сдачи.
      * @param value купюра
@@ -19,30 +21,14 @@ public class Coffee {
 	
 	public int[] changes(int value, int price) {
 		int change = value - price;
-		int[] result = new int[1000];
-		int count = 0;
-		if (change < 0) {
-			System.out.println("Введите еще " + Math.abs(change));
-		} else {		
-			for (int index = 0; index <= change / 10 - 1; index++) {
-				result[count++] = 10;
+		int[] result = new int[1];
+		for (int i = 0; i <= coins.length - 1; i++) {
+			for (int j = 0; j <= change / this.coins[i] - 1; j++) {
+				result = Arrays.copyOf(result, result.length + 1);
+				result[j] = coins[i];
 			}
-			change = change % 10;
-			
-			for (int index = 0; index <= change / 5 - 1; index++) {
-				result[count++] = 5;
-			}
-			change = change % 5;
-			
-			for (int index = 0; index <= change / 2 - 1; index++) {
-				result[count++] = 2;
-			}
-			
-			if (change % 2 == 1) {
-				result[count] = 1;
-			}
-			System.out.println("Возьмите Ваш кофе.");
+			change = change % this.coins[i];
 		}
-		return Arrays.copyOf(result, count + 1);
+		return result;
 	}
 }
