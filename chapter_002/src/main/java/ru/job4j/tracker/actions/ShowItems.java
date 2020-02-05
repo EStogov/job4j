@@ -2,6 +2,8 @@ package ru.job4j.tracker.actions;
 
 import ru.job4j.tracker.*;
 
+import java.util.List;
+
 public class ShowItems extends BaseAction {
 
     /**
@@ -22,7 +24,7 @@ public class ShowItems extends BaseAction {
     public void execute(Input input, Tracker tracker) {
         System.out.println();
         System.out.println("------------ Список заявок --------------");
-        Item[] list = tracker.findAll();
+        List<Item> list = tracker.findAll();
         for (Item item : list) {
             System.out.println(String.format("Id заявки: %s%nНазвание: %s%nОписание: %s%nВремя создания: %d",
                     item.getId(), item.getName(), item.getDecs(), item.getTime()));

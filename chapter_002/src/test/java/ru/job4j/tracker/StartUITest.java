@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -63,10 +64,10 @@ public class StartUITest {
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
 
-        Item[] checkItem = tracker.findByName(name);
+        List<Item> checkItem = tracker.findByName(name);
 
-        assertThat(checkItem[0].getName(), is(name));
-        assertThat(checkItem[0].getDecs(), is(desc));
+        assertThat(checkItem.get(0).getName(), is(name));
+        assertThat(checkItem.get(0).getDecs(), is(desc));
     }
 
     /**
@@ -80,17 +81,17 @@ public class StartUITest {
         String desc = "The best item ever been!";
         Item first = new Item(name, desc, 1L);
         tracker.add(first);
-        String id = tracker.findByName(name)[0].getId();
+        String id = tracker.findByName(name).get(0).getId();
 
         String newName = "Second";
         String newDesc = "No, this is the best item ever been!";
         String[] answers = new String[]{"2", id, newName, newDesc, "6"};
         Input input = new StubInput(answers);
         new StartUI(input, tracker).init();
-        Item[] second = tracker.findByName(newName);
+        List<Item> second = tracker.findByName(newName);
 
-        assertThat(second[0].getName(), is(newName));
-        assertThat(second[0].getDecs(), is(newDesc));
+        assertThat(second.get(0).getName(), is(newName));
+        assertThat(second.get(0).getDecs(), is(newDesc));
     }
 
     /**
@@ -104,7 +105,7 @@ public class StartUITest {
         String desc = "The Item fo delete.";
         Item check = new Item(name, desc, 1L);
         tracker.add(check);
-        String id = tracker.findByName(name)[0].getId();
+        String id = tracker.findByName(name).get(0).getId();
 
         Item nullItem = null;
         String[] answers = new String[]{"3", id, "0", "6"};

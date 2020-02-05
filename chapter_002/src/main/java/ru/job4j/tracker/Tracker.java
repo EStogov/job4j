@@ -38,12 +38,14 @@ public class Tracker {
     public boolean replace(String id, Item item) {
         item.setId(id);
         boolean rsl = false;
+        int index = 0;
         for (Item cell: this.items) {
             if (cell.getId().equals(id)) {
-                this.items.set(this.items.indexOf(cell), item);
+                this.items.set(index, item);
                 rsl = true;
                 break;
             }
+            index++;
         }
         return rsl;
     }
@@ -56,12 +58,14 @@ public class Tracker {
 
     public boolean delete(String id) {
         boolean find = false;
+        int index = 0;
         for (Item cell: this.items) {
             if (cell.getId().equals(id)) {
-                this.items.remove(cell);
+                this.items.remove(index);
                 find = true;
                 break;
             }
+            index++;
         }
         return find;
     }
@@ -71,8 +75,8 @@ public class Tracker {
      * @return список заявок
      */
 
-    public Item[] findAll() {
-            return items.toArray(new Item[this.items.size()]);
+    public List<Item> findAll() {
+            return this.items;
     }
 
     /**
@@ -81,7 +85,7 @@ public class Tracker {
      * @return массив объектов с идентичными name
      */
 
-    public Item[] findByName(String key) {
+    public List<Item> findByName(String key) {
         List<Item> result = new ArrayList<>();
 
         for (Item cell: this.items) {
@@ -89,7 +93,7 @@ public class Tracker {
                 result.add(cell);
             }
         }
-        return result.toArray(new Item[result.size()]);
+        return result;
     }
 
     /**
@@ -100,11 +104,13 @@ public class Tracker {
 
     public Item findById(String id) {
         int index = -1;
+        int count = 0;
         for (Item cell : this.items) {
             if (cell.getId().equals(id)) {
-                index = this.items.indexOf(cell);
+                index = count;
                 break;
             }
+            count++;
         }
         if (index != -1) {
             return this.items.get(index);
