@@ -73,8 +73,8 @@ public class Logic {
         int column = 0;
         for (int i = 0; i <= table.length - 1; i++) {
             if (table[0][i] == 1) {
-                for (int j = 1; j <= table.length - 2; j++) {
-                    if (table[j][i] != 1) {
+                for (int j = 1; j <= table.length - 1; j++) {
+                    if (table[j][i] == 1) {
                         column++;
                     } else {
                         break;
@@ -82,15 +82,15 @@ public class Logic {
                 }
             }
             if (table[i][0] == 1) {
-                for (int j = 1; j <= table.length - 2; j++) {
-                    if (table[i][0] != 1) {
+                for (int j = 1; j <= table.length - 1; j++) {
+                    if (table[i][j] == 1) {
                         row++;
                     } else {
                         break;
                     }
                 }
             }
-            if ((row == table.length) || (column == table.length)) {
+            if ((row == table.length - 1) || (column == table.length - 1)) {
                 result = true;
                 break;
             } else {
