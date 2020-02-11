@@ -35,6 +35,8 @@ public class BankService {
         User user = findByPassport(passport);
         if (!users.get(user).contains(account)) {
             users.get(user).add(account);
+        } else {
+            throw new IllegalArgumentException("Such account already exists");
         }
     }
 
@@ -48,6 +50,7 @@ public class BankService {
         for (User user: users.keySet()) {
             if (user.getPassport().equals(passport)) {
                 rsl = user;
+                break;
             }
         }
         return rsl;
@@ -65,7 +68,11 @@ public class BankService {
         for (Account account: users.get(user)) {
             if (account.getRequisite().equals(requisite)) {
                 rsl = account;
+                break;
             }
+        }
+        if (rsl == null) {
+            throw new IllegalArgumentException("Such user doesn't exist");
         }
         return rsl;
     }

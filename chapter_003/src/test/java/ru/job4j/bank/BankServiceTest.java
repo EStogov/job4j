@@ -27,7 +27,33 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150));
-        assertThat(bank.findByRequisite("3434", "5546").getBalance(), is(150.0));
+    }
+
+    @Test
+    public void whenAccountAlreadyExistsThenThrowIAE() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        Account account = new Account("5546", 150);
+        bank.addAccount(user.getPassport(), account);
+        try {
+            bank.addAccount("3434", account);
+        } catch (IllegalArgumentException e) {
+            assertThat(e.getMessage(), is("Such account already exists"));
+        }
+    }
+
+    @Test
+    public void whenThereIsNoSuchAccountThenThrowIAE() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new Account("5546", 150));
+        try {
+            bank.findByRequisite("3434", "5546");
+        } catch (IllegalArgumentException e) {
+            assertThat(e.getMessage(), is("Such user doesn't exist"));
+        }
     }
 
     @Test
