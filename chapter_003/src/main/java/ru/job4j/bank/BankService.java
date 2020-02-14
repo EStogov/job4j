@@ -33,11 +33,13 @@ public class BankService {
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
-        if (!users.get(user).contains(account)) {
-            users.get(user).add(account);
-        } else {
+        if (user == null) {
+            throw new IllegalArgumentException("Such user doesn't exist");
+        }
+        if (users.get(user).contains(account)) {
             throw new IllegalArgumentException("Such account already exists");
         }
+        users.get(user).add(account);
     }
 
     /**
@@ -65,6 +67,9 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         Account rsl = null;
+        if (user == null) {
+            throw (new IllegalArgumentException("Such user doesn't exist"));
+        }
         for (Account account: users.get(user)) {
             if (account.getRequisite().equals(requisite)) {
                 rsl = account;
