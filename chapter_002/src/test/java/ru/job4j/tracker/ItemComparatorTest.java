@@ -23,19 +23,20 @@ public class ItemComparatorTest {
      */
     @Test
     public void whenCompUpThen123() {
-        List<Item> items = new ArrayList<>(Arrays.asList(
-                new Item("First Item", "First Item yet", 1L),
-                new Item("Third Item", "Third Item yet", 3L),
-                new Item("Second Item", "Second Item yet", 2L)
-        ));
-        for (Item item : items) {
+        Item first = new Item("First Item", "First Item yet", 1L);
+        Item second = new Item("Second Item", "Second Item yet", 2L);
+        Item third = new Item("Third Item", "Third Item yet", 3L);
+        Item[] items = new Item[] {first, third, second};
+
+        for (Item item: items) {
             item.setId(Long.toString(item.getTime()));
         }
-        List<Item> rsl = items;
-        rsl.add(rsl.remove(1));
 
-        Collections.sort(items, new ItemComparatorUp());
-        assertThat(items, is(rsl));
+        List<Item> ItemsList = new ArrayList<>(Arrays.asList(items));
+        List<Item> expected = new ArrayList<>(Arrays.asList(new Item[] {first, second, third}));
+
+        Collections.sort(ItemsList, new ItemComparatorUp());
+        assertThat(items, is(expected));
     }
 
     /**
@@ -43,18 +44,19 @@ public class ItemComparatorTest {
      */
     @Test
     public void whenCompDownThen321() {
-        List<Item> items = new ArrayList<>(Arrays.asList(
-                new Item("First Item", "First Item yet", 1L),
-                new Item("Third Item", "Third Item yet", 3L),
-                new Item("Second Item", "Second Item yet", 2L)
-        ));
-        for (Item item : items) {
+        Item first = new Item("First Item", "First Item yet", 1L);
+        Item second = new Item("Second Item", "Second Item yet", 2L);
+        Item third = new Item("Third Item", "Third Item yet", 3L);
+        Item[] items = new Item[] {first, third, second};
+
+        for (Item item: items) {
             item.setId(Long.toString(item.getTime()));
         }
-        List<Item> rsl = items;
-        rsl.add(rsl.remove(0));
 
-        Collections.sort(items, new ItemComparatorDown());
-        assertThat(items, is(rsl));
+        List<Item> ItemsList = new ArrayList<>(Arrays.asList(items));
+        List<Item> expected = new ArrayList<>(Arrays.asList(new Item[] {third, second, first}));
+
+        Collections.sort(ItemsList, new ItemComparatorDown());
+        assertThat(items, is(expected));
     }
 }
