@@ -20,7 +20,7 @@ public class LogicTest {
                 };
             }
         };
-        assertThat(logic.isWin(), is(false));
+        assertThat(logic.isWin(), is(true));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class LogicTest {
                 };
             }
         };
-        assertThat(logic.isWin(), is(false));
+        assertThat(logic.isWin(), is(true));
     }
 
     @Test
