@@ -32,11 +32,11 @@ public class ItemComparatorTest {
             item.setId(Long.toString(item.getTime()));
         }
 
-        List<Item> ItemsList = new ArrayList<>(Arrays.asList(items));
+        List<Item> itemsList = new ArrayList<>(Arrays.asList(items));
         List<Item> expected = new ArrayList<>(Arrays.asList(new Item[] {first, second, third}));
 
-        Collections.sort(ItemsList, new ItemComparatorUp());
-        assertThat(items, is(expected));
+        Collections.sort(itemsList, new ItemComparatorUp());
+        assertThat(itemsList, is(expected));
     }
 
     /**
@@ -53,10 +53,10 @@ public class ItemComparatorTest {
             item.setId(Long.toString(item.getTime()));
         }
 
-        List<Item> ItemsList = new ArrayList<>(Arrays.asList(items));
+        List<Item> itemsList = new ArrayList<>(Arrays.asList(items));
         List<Item> expected = new ArrayList<>(Arrays.asList(new Item[] {third, second, first}));
 
-        Collections.sort(ItemsList, new ItemComparatorDown());
-        assertThat(items, is(expected));
+        Collections.sort(itemsList, new ItemComparatorDown());
+        assertThat(itemsList, is(expected));
     }
 }
