@@ -12,7 +12,13 @@ public class StringCompare implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
         int rsl = 0;
-        for (int index = 0; index < left.length(); index++) {
+        int length;
+        if (left.length() <= right.length()) {
+            length = left.length();
+        } else {
+            length = right.length();
+        }
+        for (int index = 0; index < length; index++) {
             rsl = Character.compare(left.charAt(index), right.charAt(index));
             if (rsl != 0) {
                 break;
