@@ -14,6 +14,6 @@ public class LexSort implements Comparator<String> {
     public int compare(String left, String right) {
         int numberLeft = Integer.parseInt(left.substring(0, left.indexOf(".")));
         int numberRight = Integer.parseInt(right.substring(0, right.indexOf(".")));
-        return numberLeft - numberRight;
+        return Integer.compare(numberLeft, numberRight);
     }
 }
